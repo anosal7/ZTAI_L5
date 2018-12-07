@@ -25,39 +25,39 @@ async function query() {
     }
 }
 
-function get(id) {
-    return ProductModel.findOne({_id: id}).then(function (result) {
+async function get(id) {
+    const result = await PostModel.findOne({_id: id});
+    {
         if (result) {
             return mongoConverter(result);
         }
-    });
+    }
 }
 
 function createNewOrUpdate(data) {
     return Promise.resolve().then(() => {
         if (!data.id) {
-            return new ProductModel(data).save().then(result => {
+            return new PostModel(data).save().then(result => {
                 if (result[0]) {
                     return mongoConverter(result[0]);
                 }
             });
-        } else {
-            return ProductModel.findByIdAndUpdate(data.id, _.omit(data, 'id'), {new: true});
-        }
+        } //else {
+        //return PostModel.findByIdAndUpdate(data.id, _.omit(data, 'id'), {new: true});
+        //}
     }).catch(error => {
         if ('ValidationError' === error.name) {
             error = error.errors[Object.keys(error.errors)[0]];
-            throw applicationException.new(applicationException.BAD_REQUEST, error.message);
+            // throw applicationException.new(applicationException.BAD_REQUEST, error.message);
         }
         throw error;
     });
 }
-
 
 export default {
     query: query,
     get: get,
     createNewOrUpdate: createNewOrUpdate,
 
-    model: ProductModel
+    model: PostModel
 };

@@ -10,8 +10,24 @@ function create(context) {
         }
     }
 
+    async function get(id) {
+        let result = await postDAO.get(id);
+        if (result) {
+            return result;
+        }
+    }
+
+    async function createNewOrUpdate(data) {
+        let result = await postDAO.createNewOrUpdate(data);
+        if (result) {
+            return result;
+        }
+    }
+
     return {
-        query: query
+        query: query,
+        get: get,
+        createNewOrUpdate: createNewOrUpdate
     };
 }
 
