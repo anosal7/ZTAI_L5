@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {DataService} from "../../services/data-service.service";
+import {ActivatedRoute} from '@angular/router';
+import {DataService} from '../../services/data-service.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -12,7 +12,7 @@ export class BlogDetailComponent implements OnInit {
   id: string;
   post: any;
 
-  constructor(private route: ActivatedRoute, private dataService:DataService) { }
+  constructor(private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');

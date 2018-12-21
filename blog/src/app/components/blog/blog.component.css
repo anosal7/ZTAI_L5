@@ -1,0 +1,18 @@
+.buttonNewPost{
+  background-color:#fffd00;
+  border: 1px solid deeppink;
+  margin-left: 15px;
+
+}
+
+.blog{
+
+  width: 40%;
+  height: 30%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 10px 50px 50px 50px;
+  border-radius: 50px;
+  border: 2px solid #cbcbcb;
+  box-shadow: 10px 15px 5px #cbcbcb;
+}

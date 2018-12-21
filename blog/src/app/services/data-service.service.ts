@@ -34,7 +34,7 @@ export class DataService {
   }
 
   getAll(){
-    return this.http.get(this.url + '/api/posts').pipe(map((x:any[])=>x.slice(0,20)));
+    return this.http.get(this.url + '/api/posts').pipe(map((x:any[])=>x.slice(0,100)));
   }
 
   get(id){

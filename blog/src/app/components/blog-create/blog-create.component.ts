@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../../services/data-service.service";
+import {DataService} from '../../services/data-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-blog-create',
@@ -12,20 +13,20 @@ export class BlogCreateComponent implements OnInit {
     title: '',
     url: '',
     content: '',
-  }
+  };
 
-  constructor(private dataService:DataService) { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  createPost(post){
+  createPost(post) {
     this.dataService.createNewOrUpdate(post).subscribe( result => {
-      console.log('Button works');
-    })
+      this.router.navigate(['/blog/']);
+    });
   }
 
-  submit(){
+  submit() {
     this.createPost(this.post);
   }
 

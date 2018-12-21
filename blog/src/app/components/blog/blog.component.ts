@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DataService} from "../../services/data-service.service";
-import {Router} from "@angular/router";
+import {DataService} from '../../services/data-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -10,14 +10,14 @@ import {Router} from "@angular/router";
 
 export class BlogComponent implements OnInit {
 
-  @Input ('filterText')  filterText : string;
+  @Input ('filterText')  filterText: string;
   // filterText : string;
-  items : any;
-  constructor(private dataService:DataService, private router: Router) { }
+  items: any;
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
     this.dataService.getAll().subscribe(result=>{
-      this.items=result;
+      this.items= result;
     });
   }
 

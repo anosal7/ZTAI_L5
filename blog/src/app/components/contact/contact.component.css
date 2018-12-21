@@ -17,11 +17,15 @@
   padding-top: 15px;
 
 }
-#buttonContact1, #buttonContact2{
+#buttonContact1{
   background-color: deeppink;
   border: 1px solid deeppink;
 }
 
-
+#buttonContact2{
+  background-color: deeppink;
+  border: 1px solid deeppink;
+  margin-left: 10px;
+}
 
 
