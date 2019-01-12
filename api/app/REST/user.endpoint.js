@@ -4,10 +4,8 @@ import business from '../business/bussiness.container';
 import applicationException from '../service/applicationException';
 // import auth from '../middleware/auth';
 // const admin = require('../middleware/admin');
-
-
-
 // import auth from '../middleware/auth';
+
 const userEndpoint = (router) => {
     router.post('/api/user/auth',  async (request, response, next) => {
         try {
