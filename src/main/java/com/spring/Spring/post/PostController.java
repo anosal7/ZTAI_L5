@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/api")
+@RequestMapping("/")
 public class PostController {
 
     private PostService postService;
@@ -17,14 +17,14 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping("/posts")
-    public List<Post> getAllPosts(){
-        System.out.println("jestem");
-        return postService.getAll();
-    }
-
-    @GetMapping("/posts/{id}")
-    public Post getPost(@PathVariable("id") Integer id){
-        return postService.get(id);
-    }
+//    @GetMapping("/posts")
+//    public List<Post> getAllPosts(){
+//        System.out.println("jestem");
+//        return postService.getAll();
+//    }
+//
+//    @GetMapping("/posts/{id}")
+//    public Post getPost(@PathVariable("id") Integer id){
+//        return postService.get(id);
+//    }
 }
