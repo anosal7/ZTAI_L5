@@ -21,8 +21,8 @@ export class AuthInterceptor implements HttpInterceptor {
     request = request.clone({
       setHeaders: {
         'x-auth-token': ` ${auth.getToken()}`
-  }
-  });
+      }
+    });
 
     return next.handle(request);
   }

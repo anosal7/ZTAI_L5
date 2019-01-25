@@ -1,13 +1,16 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+// import {Token} from "@angular/compiler";
 import {JwtHelper} from 'angular2-jwt';
-import {map} from 'rxjs/operators';
 import {Token} from '../models/token';
+import {map} from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
 
-  private url = 'http://localhost:3000/api';
+  private url = 'https://localhost:8080/api';
 
   constructor(private http: HttpClient) {
   }
@@ -31,9 +34,6 @@ export class AuthService {
     return this.http.post(this.url + '/user/create', credentials);
   }
 
-
-
-
   logout() {
     return this.http.delete(this.url + '/user/logout/' + this.currentUser.userId)
       .pipe(
@@ -51,6 +51,7 @@ export class AuthService {
     }
     return !(jwtHelper.isTokenExpired(token));
   }
+
 
   get currentUser() {
     const token = this.getToken();

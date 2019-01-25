@@ -22,12 +22,12 @@ import { TextFormatDirective } from './directives/text-format.directive';
 import { BlogCreateComponent } from './components/blog-create/blog-create.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 import {AuthService} from './services/auth-service.service';
-import {AdminGuard} from './services/admin-guard.guard';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthInterceptor} from './services/auth/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './components/signup/signup.component';
+
 
 
 const appRoutes: Routes = [

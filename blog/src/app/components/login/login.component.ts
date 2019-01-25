@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth-service.service';
-
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,18 +9,15 @@ import {AuthService} from '../../services/auth-service.service';
 })
 export class LoginComponent implements OnInit {
 
+  logged = null;
+  logout = null;
   credentials = {
     login: '',
     password: ''
   };
-  logged: boolean;
-  logout: boolean;
 
-
-  constructor(public authService: AuthService,
-              private router: Router) {
+  constructor(public authService: AuthService, private router: Router) {
   }
-
 
   ngOnInit() {
   }
@@ -36,7 +32,7 @@ export class LoginComponent implements OnInit {
           login: '',
           password: ''
         };
-        this.router.navigate(['/home-component']);
+        this.router.navigate(['/']);
       }
     });
   }
